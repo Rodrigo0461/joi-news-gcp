@@ -1,0 +1,29 @@
+make[1]: Entering directory `/Users/rpichinual/Documents/WORKSPACE/joi-news-gcp-candidate-latest'
+# gcloud auth activate-service-account --key-file infra/.interviewee-creds.json
+$(gcloud auth configure-docker gcr.io --quiet)
+docker tag front_end gcr.io/$(cat .projectid.txt)/front_end
+docker push gcr.io/$(cat .projectid.txt)/front_end
+ 
+# gcloud auth activate-service-account --key-file infra/.interviewee-creds.json
+$(gcloud auth configure-docker gcr.io --quiet)
+docker tag quotes gcr.io/$(cat .projectid.txt)/quotes
+docker push gcr.io/$(cat .projectid.txt)/quotes
+# gcloud auth activate-service-account --key-file infra/.interviewee-creds.json
+$(gcloud auth configure-docker gcr.io --quiet)
+docker tag newsfeed gcr.io/$(cat .projectid.txt)/newsfeed
+docker push gcr.io/$(cat .projectid.txt)/newsfeed
+make[1]: Leaving directory `/Users/rpichinual/Documents/WORKSPACE/joi-news-gcp-candidate-latest'
+/Library/Developer/CommandLineTools/usr/bin/make news.infra
+ 
+make[1]: Entering directory `/Users/rpichinual/Documents/WORKSPACE/joi-news-gcp-candidate-latest'
+dojo "make _news.infra"
+make[1]: Leaving directory `/Users/rpichinual/Documents/WORKSPACE/joi-news-gcp-candidate-latest'
+ 
+/Library/Developer/CommandLineTools/usr/bin/make deploy_site
+ 
+make[1]: Entering directory `/Users/rpichinual/Documents/WORKSPACE/joi-news-gcp-candidate-latest'
+dojo "make _deploy_site"
+ 
+make[1]: Leaving directory `/Users/rpichinual/Documents/WORKSPACE/joi-news-gcp-candidate-latest'
+make: Leaving directory `/Users/rpichinual/Documents/WORKSPACE/joi-news-gcp-candidate-latest'
+ 
